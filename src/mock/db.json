@@ -1,0 +1,79 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Hotel Roc Varadero",
+      "desc": "Hotel Roc Varadero is a luxurious hotel located in the heart of the city. It offers elegant rooms, exceptional dining options, and top-notch amenities.",
+      "rating": 4.7,
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/b7/f2/54/hotel-roc-varadero.jpg?w=1200&h=-1&s=1",
+      "resources": {
+        "rooms": 50,
+        "restaurants": 2,
+        "swimming_pools": 1,
+        "gym": true,
+        "spa": true,
+        "business_center": true
+      }
+    },
+    {
+      "id": 2,
+      "name": "Sol Varadero Beach",
+      "desc": "Sol Varadero Beach is a modern hotel situated near the beach. It provides comfortable accommodations, delicious cuisine, and a range of recreational facilities.",
+      "rating": 4.2,
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/43/05/ca/sol-varadero-beach-all.jpg?w=1100&h=-1&s=1",
+      "resources": {
+        "rooms": 100,
+        "restaurants": 3,
+        "swimming_pools": 2,
+        "gym": true,
+        "spa": false,
+        "business_center": true
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sol Caribe Beach",
+      "desc": "Sol Caribe Beach offers a unique blend of history and luxury. With its stunning architecture, spacious rooms, and exceptional service, it's an ideal choice for discerning travelers.",
+      "rating": 4.9,
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/72/b2/2c/sol-caribe-beach.jpg?w=1200&h=-1&s=1",
+      "resources": {
+        "rooms": 80,
+        "restaurants": 1,
+        "swimming_pools": 3,
+        "gym": true,
+        "spa": true,
+        "business_center": false
+      }
+    },
+    {
+      "id": 4,
+      "name": "Sanctuary At Grand Memories Varadero",
+      "desc": "Sanctuary At Grand Memories Varadero offers breathtaking views of the surrounding mountains. It boasts comfortable rooms, a rooftop restaurant, and a rejuvenating spa.",
+      "rating": 4.5,
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/d8/3d/bc/grand-memories-sanctuary.jpg?w=600&h=-1&s=1",
+      "resources": {
+        "rooms": 60,
+        "restaurants": 2,
+        "swimming_pools": 1,
+        "gym": true,
+        "spa": true,
+        "business_center": true
+      }
+    },
+    {
+      "id": 5,
+      "name": "Iberostar Selection Varadero",
+      "desc": "Iberostar Selection Varadero is a charming boutique hotel with a cozy ambiance. It offers personalized service, stylish rooms, and a delightful garden cafe.",
+      "rating": 4.3,
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/af/90/8b/iberostar-selection-varadero.jpg?w=1200&h=-1&s=1",
+      "resources": {
+        "rooms": 30,
+        "restaurants": 1,
+        "swimming_pools": 0,
+        "gym": false,
+        "spa": false,
+        "business_center": false
+      }
+    }
+  ]
+}
