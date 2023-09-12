@@ -1,10 +1,10 @@
-import { createStore } from "zustand";
+import { create } from "zustand";
 
-const useStore = createStore( (set) => ({
+const useStore = create( (set) => ({
   reservation: [],
-  addReservation : (hotel, dates) => set( state => {
-    [...state.reservation, {hotel, dates} ]
-  })
+  addReservation : (hotel, dates) => set( state => ({
+    reservation: [...state.reservation, {hotel, dates} ]
+  }))
 }))
 
 export default useStore
