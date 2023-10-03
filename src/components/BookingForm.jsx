@@ -22,14 +22,15 @@ function BookingForm({hotel}) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Input type="date" {...register("startDate", {required: true})}  />
+      <Input  type="date" {...register("startDate", {required: true})}  />
       { errors.startDate && <Typography sx={{color:'red'}}>Start Date is Required</Typography>}
       <br />
       <Input type="date" {...register("endDate", {required: true})}  />
       { errors.endDate && <Typography sx={{color:'red'}}>End Date is Required</Typography>}
       <br />
       <br />
-      <Button variant="contained" type="submit">
+      <Button variant="contained" sx={{bgcolor:'#f6c90e',
+                ":hover":{bgcolor:"#cda607"}}} type="submit">
         MakeReservation
       </Button>
     </form>

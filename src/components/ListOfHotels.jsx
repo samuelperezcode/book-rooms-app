@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import getHotels from "../services/getHotels";
 import Spiner from "./Spiner";
 import HotelCard from "./HotelCard";
-import { Stack, Typography } from "@mui/material"
+import { Typography } from "@mui/material"
 
 function ListOfHotels() {
   const {
@@ -13,11 +13,11 @@ function ListOfHotels() {
 
 
   return (
-    <>
-      <Typography variant="h4" component='h2' >
+    <section className="container">
+      <Typography sx={{marginBlock:8}} variant="h2" component='h1' >
         Booking App
       </Typography>
-      <Stack spacing={2}>
+      <div className="hotels">
         {
           isLoading
             ? <Spiner />
@@ -28,8 +28,8 @@ function ListOfHotels() {
                               )
                       })
         }
-      </Stack>
-    </>
+      </div>
+    </section>
   )
 }
 

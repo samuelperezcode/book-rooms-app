@@ -1,16 +1,18 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
+import { Button, Card, CardActions, CardContent, CardMedia, Typography, IconButton } from "@mui/material"
+import { Favorite } from "@mui/icons-material"
+
 import {Link} from 'wouter'
 
 // eslint-disable-next-line react/prop-types
 function HotelCard({name,image, desc, id}) {
   return (
-    <Card sx={{maxWidth: 345, background: '#e8e8e8' }}>
+    <Card sx={{maxWidth: 345, background: '#eee', borderRadius:'24px'}}>
       <CardMedia
-        sx={{height: 140}}
+        sx={{height: 200}}
         image={image}
         title={name}
       />
-      <CardContent>
+      <CardContent >
         <Typography gutterBottom variant="h5" component="div" >
           {name}
         </Typography>
@@ -18,10 +20,22 @@ function HotelCard({name,image, desc, id}) {
           {desc}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ paddingBottom: 2}}>
           <Link href={`hotels/${id}`} >
-                  <Button size="small">See Details</Button>
+            <Button 
+              size="medium" 
+              variant="contained" 
+              sx={{
+                bgcolor:'#f6c90e',
+                ":hover":{bgcolor:"#cda607"}
+              }}
+            >
+              See Details
+            </Button>
           </Link>
+          <IconButton>
+            <Favorite color="error" />
+          </IconButton>
       </CardActions>
     </Card>
   )

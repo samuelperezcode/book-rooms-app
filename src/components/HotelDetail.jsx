@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query"
-import { useRoute } from "wouter"
+import { useRoute, useLocation } from "wouter"
 import getHotelById from "../services/getHotelById"
 import Spiner from "./Spiner"
 import BookingForm from "./BookingForm"
-import { Typography, Card, CardMedia, CardContent, CardActions } from "@mui/material"
+import { IconButton, Typography} from "@mui/material"
+import { ArrowBack, Favorite } from "@mui/icons-material"
 
 function HotelDetail() {
   const [match, params] = useRoute('/hotels/:id')
@@ -12,6 +13,11 @@ function HotelDetail() {
     isLoading,
     error
   } = useQuery({queryKey:["hotel", params?.id], queryFn:() => getHotelById(params?.id)})
+  const [location, setLocation] = useLocation();
+
+  const handleClick = () => {
+    setLocation('/')
+  }
 
   return (
     <>
@@ -19,24 +25,35 @@ function HotelDetail() {
       isLoading ? <Spiner />
                 : error ? <h3>Error fetching data, {error.message}</h3>
                         : (
-                          <Card sx={{maxWidth: 345, background: '#e8e8e8' }}>
-                            <CardMedia
-                              sx={{height: 140}}
-                              image={hotel.image}
-                              title={hotel.name}
-                            />
-                            <CardContent>
-                              <Typography gutterBottom variant="h5" component="div" >
-                                {hotel.name}
-                              </Typography>
-                              <Typography variant="body2" color="text.secondary">
-                                {hotel.desc}
-                              </Typography>
-                            </CardContent>
-                            <CardActions>
+                          <section className="container">
+                            <div>
+                              <IconButton sx={{color: "#fff"}} onClick={handleClick}>
+                                <ArrowBack />
+                              </IconButton>
+                            </div>
+                            <div className="detail-container">
+                              <div>
+                                <article className="content">
+                                  <Typography gutterBottom variant="h3" component="div" color="#f6c90e" >
+                                    {hotel.name}
+                                  </Typography>
+                                  <Typography variant="body1" color="#eee">
+                                    {hotel.desc}
+                                  </Typography>
+                                  <IconButton sx={{marginTop: 4}}>
+                                    <Favorite color="error" />
+                                  </IconButton>
+                                </article>
+                              </div>
+                              <img
+                                src={hotel.image}
+                                alt={hotel.name}
+                              />
+                            </div>
+                            <aside className="detail-form">
                                 <BookingForm hotel={hotel} />
-                            </CardActions>
-                          </Card>
+                            </aside>
+                          </section>
                         )
       }
     </>

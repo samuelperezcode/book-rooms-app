@@ -8,7 +8,7 @@
   width: var(--w);
   overflow: hidden;
   white-space: nowrap;
-  color: #0000;
+  color: #FFF;
   animation: l17 2s infinite;
 }
 .loader:before {
