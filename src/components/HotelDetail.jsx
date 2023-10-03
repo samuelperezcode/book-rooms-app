@@ -1,23 +1,21 @@
 import { useQuery } from "@tanstack/react-query"
-import { useRoute, useLocation } from "wouter"
+import { useRoute} from "wouter"
 import getHotelById from "../services/getHotelById"
 import Spiner from "./Spiner"
 import BookingForm from "./BookingForm"
 import { IconButton, Typography, Chip} from "@mui/material"
 import { ArrowBack, Favorite } from "@mui/icons-material"
+import AnimatedLink from "./AnimatedLink"
 
 function HotelDetail() {
-  const [match, params] = useRoute('/hotels/:id')
+  const [, params] = useRoute('/hotels/:id')
   const {
     data: hotel,
     isLoading,
     error
   } = useQuery({queryKey:["hotel", params?.id], queryFn:() => getHotelById(params?.id)})
-  const [location, setLocation] = useLocation();
 
-  const handleClick = () => {
-    setLocation('/')
-  }
+
 
   return (
     <>
@@ -27,9 +25,11 @@ function HotelDetail() {
                         : (
                           <section className="container">
                             <div>
-                              <IconButton sx={{color: "#fff"}} onClick={handleClick}>
-                                <ArrowBack />
-                              </IconButton>
+                              <AnimatedLink to='/'>
+                                <IconButton sx={{color: "#fff"}}>
+                                  <ArrowBack />
+                                </IconButton>
+                              </AnimatedLink>
                             </div>
                             <div className="detail-container">
                               <div>
@@ -49,6 +49,8 @@ function HotelDetail() {
                                 </article>
                               </div>
                               <img
+                              style={{viewTransitionName: `card-image-${hotel.id}`}}
+                                className="image-detail--page"
                                 src={hotel.image}
                                 alt={hotel.name}
                               />

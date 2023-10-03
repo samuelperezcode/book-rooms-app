@@ -3,6 +3,7 @@ import getHotels from "../services/getHotels";
 import Spiner from "./Spiner";
 import HotelCard from "./HotelCard";
 import { Typography } from "@mui/material"
+import figure from '../assets/figure.svg'
 
 function ListOfHotels() {
   const {
@@ -14,6 +15,7 @@ function ListOfHotels() {
 
   return (
     <section className="container">
+      <img className="figure-yellow" src={figure} alt="yollow figure" />
       <Typography sx={{marginBlock:8}} variant="h2" component='h1' >
         Booking Room
       </Typography>
