@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography, IconButton } from "@mui/material"
+import { Button, Card, CardActions, CardContent, CardMedia, Typography, IconButton, Chip } from "@mui/material"
 import { Favorite } from "@mui/icons-material"
 
 import {Link} from 'wouter'
@@ -6,7 +6,7 @@ import {Link} from 'wouter'
 // eslint-disable-next-line react/prop-types
 function HotelCard({name,image, desc, id}) {
   return (
-    <Card sx={{maxWidth: 345, background: '#eee', borderRadius:'24px'}}>
+    <Card sx={{maxWidth: 300, background: '#eee', borderRadius:'24px'}}>
       <CardMedia
         sx={{height: 200}}
         image={image}
@@ -36,6 +36,7 @@ function HotelCard({name,image, desc, id}) {
           <IconButton>
             <Favorite color="error" />
           </IconButton>
+          <Chip label="342" />
       </CardActions>
     </Card>
   )

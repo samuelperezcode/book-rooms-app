@@ -3,7 +3,7 @@ import { useRoute, useLocation } from "wouter"
 import getHotelById from "../services/getHotelById"
 import Spiner from "./Spiner"
 import BookingForm from "./BookingForm"
-import { IconButton, Typography} from "@mui/material"
+import { IconButton, Typography, Chip} from "@mui/material"
 import { ArrowBack, Favorite } from "@mui/icons-material"
 
 function HotelDetail() {
@@ -40,9 +40,12 @@ function HotelDetail() {
                                   <Typography variant="body1" color="#eee">
                                     {hotel.desc}
                                   </Typography>
-                                  <IconButton sx={{marginTop: 4}}>
-                                    <Favorite color="error" />
-                                  </IconButton>
+                                  <div className="like-container">
+                                    <IconButton>
+                                      <Favorite color="error" />
+                                    </IconButton>
+                                    <Chip sx={{color:"#eee"}} label="56" />
+                                  </div>
                                 </article>
                               </div>
                               <img

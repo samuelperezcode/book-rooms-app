@@ -1,23 +1,27 @@
 :root{
+  --primary-color: #f6c90e;
   --dark-color: #252c33;
   --gray-color: #3a4750;
-  --primary-color: #f6c90e;
   --white-color: #eee;
 
 }
 body{
+  width: 100%;
   background-color: var(--dark-color);
   color: var(--white-color);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .container{
   margin: 0 auto;
   max-width: 960px;
+  
 }
 
 .hotels{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 32px;
 }
 
@@ -48,3 +52,8 @@ body{
   text-align: center;
 }
 
+.like-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

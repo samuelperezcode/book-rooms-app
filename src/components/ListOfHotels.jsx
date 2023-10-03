@@ -15,7 +15,7 @@ function ListOfHotels() {
   return (
     <section className="container">
       <Typography sx={{marginBlock:8}} variant="h2" component='h1' >
-        Booking App
+        Booking Room
       </Typography>
       <div className="hotels">
         {
